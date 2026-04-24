@@ -12,6 +12,7 @@ import CompanyPage from './pages/CompanyPage';
 import RoadmapPage from './pages/RoadmapPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import FeedbackPage from './pages/FeedbackPage';
+import SkillForgePage from './pages/SkillForgePage';
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem('token');
@@ -35,6 +36,7 @@ function App() {
           <Route path="roadmap" element={<RoadmapPage />} />
           <Route path="analytics" element={<AnalyticsPage />} />
           <Route path="feedback" element={<FeedbackPage />} />
+          <Route path="skillforge" element={<SkillForgePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

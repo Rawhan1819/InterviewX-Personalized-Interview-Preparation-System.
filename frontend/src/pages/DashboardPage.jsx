@@ -41,9 +41,12 @@ const DashboardPage = () => {
             Welcome Back, <span className="text-yellow-300">{user.full_name || 'Innovator'}</span>! ✨
           </h1>
           <p className="text-indigo-100 max-w-lg font-medium opacity-90">Your agentic preparation journey is in full swing. Let's tackle your next interview session today.</p>
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex flex-wrap gap-4">
             <Link to="/interview" className="px-8 py-3.5 bg-white text-purple-700 font-bold rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-3">
               Start Mock Interview <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link to="/skillforge" className="px-8 py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold rounded-xl shadow-lg hover:bg-white/20 transition-all flex items-center gap-3">
+              Practice Skills <Zap className="w-5 h-5 text-yellow-300" />
             </Link>
           </div>
         </div>

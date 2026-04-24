@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard,
   FileText,
@@ -13,7 +13,8 @@ import {
   User,
   Bell,
   Search,
-  Sparkles
+  Sparkles,
+  Zap
 } from 'lucide-react';
 
 const Layout = () => {
@@ -35,7 +36,11 @@ const Layout = () => {
     { name: 'Career Roadmap', path: '/roadmap', icon: Map },
     { name: 'Analytics', path: '/analytics', icon: BarChart3 },
     { name: 'Feedback', path: '/feedback', icon: MessageSquare },
+    { name: 'Skill Development', path: '/skillforge', icon: Zap },
   ];
+
+  const location = useLocation();
+  const isSkillForge = location.pathname === '/skillforge';
 
   return (
     <div className="flex h-screen bg-[#f8f9fa] overflow-hidden">
@@ -104,8 +109,8 @@ const Layout = () => {
           </div>
         </header>
 
-        <main className="flex-1 overflow-y-auto p-8">
-          <div className="max-w-7xl mx-auto">
+        <main className={`flex-1 overflow-y-auto ${isSkillForge ? 'p-4' : 'p-8'}`}>
+          <div className={isSkillForge ? 'w-full h-full' : 'max-w-7xl mx-auto'}>
             <Outlet />
           </div>
         </main>
